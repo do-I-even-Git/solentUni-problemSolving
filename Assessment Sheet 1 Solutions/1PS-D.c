@@ -1,0 +1,36 @@
+//
+// Created by raulf on 05/07/2026.
+//
+#include <stdio.h>
+
+int main() {
+
+    //Here expenditure values are declared and given array values.
+
+    int Food[] = {20, 13, 26};
+    int Transport[] = {50, 60, 18};
+    int Entertainment[] = {15, 23, 51};
+
+
+    //Here the sum of integers of each array is calculated and separated into correspondent variables.
+
+    int totalFood = (Food[0] + Food[1] + Food[2]);
+    int totalTransport = (Transport[0] + Transport[1] + Transport[2]);
+    int totalEntertainment = (Entertainment[0] + Entertainment[1] + Entertainment[2]);
+
+
+    //Here the grand total of previously obtained sums is calculated and stored into a single variable.
+
+    int totalSpent = (totalFood + totalTransport + totalEntertainment);
+
+
+    //Next all the totals are printed along with a text clarifying each category precedent to the integer values, each on single line format.
+
+    printf("The grand total of expenditures, adding up Food, Transport and Entertainment, is: %i pounds.\n", totalSpent);
+    printf("The total expenditure on Food comes up to: %i pounds.\n", totalFood);
+    printf("The total expenditure on Transport comes up to: %i pounds.\n", totalTransport);
+    printf("The total expenditure on Entertaiment comes up to: %i pounds.\n" , totalEntertainment);
+
+
+    return 0;
+}
