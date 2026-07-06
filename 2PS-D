@@ -1,9 +1,46 @@
+
 #include <stdio.h>
 
 int main()
 {
 
+//Variables are initialised, a set value is defined to obtain a result.
+    char movieType = 'A';
+    char ticketType = 'P';
+    float ticketPrice = 00.00;
+
+        //A switch() statement is used to allocated price values to each type of movie.
+        switch(movieType) {
+            
+            case 'A':
+            ticketPrice = 10.00;
+            break;
+            case 'C':
+            ticketPrice = 08.00;
+            break;
+            case 'H':
+            ticketPrice = 09.00;
+            break;
+            
+        }
+    
+        //A switch() statement is used to add the price of ticket type to the already registered price of movie type.
+        switch(ticketType){
+            
+            case 'S':
+            ticketPrice+0;
+            break;
+            case 'P':
+            ticketPrice+05.00;
+            break;
+            
+        }
+    
+            //Results of combination of movie type and ticket type are printed through the ticket price stored calculation.
+            printf("Movie type is: %c.\nTicket type is: %c.\n", movieType, ticketType);
+            printf("\nTicket price therefore is: %2f.\n", ticketPrice);
 
 
     return 0;
+    
 }
