@@ -1,42 +1,69 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <stdio.h>
 
 int main()
 {
 
-    char movieType = 'A';
-    char ticketType = 'P';
+    char movieTypeC = 'A';
+    char movieType[99] = "";
+    char ticketTypeC = 'P';
+    char ticketType[99] = "";
     float ticketPrice = 00.00;
 
     
-        switch(movieType) {
+        switch(movieTypeC) {
             
             case 'A':
             ticketPrice = 10.00;
+            for (int i = 0; i < 1; i++){
+            movieType == "Action";    
+            }
             break;
+            
             case 'C':
             ticketPrice = 08.00;
+            for (int i = 0; i < 1; i++){
+            movieType == "Comedy";    
+            }
             break;
+            
             case 'H':
             ticketPrice = 09.00;
+            for (int i = 0; i < 1; i++){
+            movieType == "Horror";    
+            }
             break;
             
         }
     
         
-        switch(ticketType){
+            switch(ticketTypeC){
             
             case 'S':
-            ticketPrice+0;
-            break;
+                ticketPrice+0;
+                for (int i = 0; i < 1; i++){
+                ticketType == "Standard seat";    
+                }
+                break;
             case 'P':
-            ticketPrice = (ticketPrice + 05.00);
-            break;
+                ticketPrice = (ticketPrice + 05.00);
+                for (int i = 0; i < 1; i++){
+                ticketType == "Premium seat";    
+                }
+                break;
             
-        }
+        } 
     
 
-        printf("Movie type is: %c.\nTicket type is: %c.\n", movieType, ticketType);
-        printf("\nTicket price therefore is: %2f.\n", ticketPrice);
+            printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
+            printf("\nTicket price therefore is: %2f.\n", ticketPrice);
 
 
     return 0;
