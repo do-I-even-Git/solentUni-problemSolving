@@ -49,6 +49,12 @@ int main()
                     ticketPrice = 09.00;
                     sprintf(movieType, "Horror");
                     break;
+                    
+                //Movie type validaton
+                default:
+                printf("Invalid movie type input.");
+                return 0;
+                break;
             }
 
 
@@ -64,7 +70,7 @@ int main()
                     ticketPrice+0;
                     sprintf(ticketType, "Standard seat");
                     break;
-               case 's':
+                case 's':
                     ticketPrice+0;
                     sprintf(ticketType, "Standard seat");
                     break;
@@ -72,11 +78,16 @@ int main()
                     ticketPrice = (ticketPrice + 05.00);
                     sprintf(ticketType, "Premium seat");
                     break;
-                 case 'p':
+                case 'p':
                     ticketPrice = (ticketPrice + 05.00);
                     sprintf(ticketType, "Premium seat");
                     break;
-             
+                    
+                //Ticket type validaton
+                default:
+                    printf("Invalid seat type input.");
+                    return 0;
+                    break;
            
             }
 
@@ -93,7 +104,7 @@ int main()
     float snackSum = (snackPrice * ticketAmount);
 
 
-           //Checking for negative values.
+           //Ticket amount validation
             if (ticketAmount < 1){
                 printf("Invalid movie type selected.\n\n");
                 return 0;
@@ -105,27 +116,47 @@ int main()
         scanf(" %c", &snack);
         
             //if statement polarises results depending on snack variable.
-            if(snack == 'Y' || snack == 'y'){
+            switch(snack){                
                 
+                case 'Y': 
                 //The final cost variable is updated to include the snack cost.
                 priceSum = (priceSum + snackSum);
-            
                     //Printing is actioned factoring in the snack variable and it's price sister variable, feeding values from the switch and if statements above.
                     printf("\n-------------------Sum up-------------------\n");
                     printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
                     printf("Ticket price per ticket is: %2f.\nTickets: %d.\nSnack Combo Cost: %2f.\n", ticketPrice, ticketAmount, snackSum);
-
-                
-            } else if (snack == 'N' || snack == 'n'){
-                
+                        break;
                         
+                case 'y': 
+                //The final cost variable is updated to include the snack cost.
+                priceSum = (priceSum + snackSum);
+                    //Printing is actioned factoring in the snack variable and it's price sister variable, feeding values from the switch and if statements above.
+                    printf("\n-------------------Sum up-------------------\n");
+                    printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
+                    printf("Ticket price per ticket is: %2f.\nTickets: %d.\nSnack Combo Cost: %2f.\n", ticketPrice, ticketAmount, snackSum);
+                        break;
+                        
+                case 'N':
                     //Printing is actioned, feeding values from the switch and if statements above.
                     printf("\n\n-------------------Sum up-------------------\n");
                     printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
                     printf("Ticket price per ticket is: %2f.\nTickets: %d.\nCombo Snack for £5.50 a ticket: NO.\n", ticketPrice, ticketAmount);
-    
-                    }
-                    
+                        break;
+                        
+                case 'n':
+                    //Printing is actioned, feeding values from the switch and if statements above.
+                    printf("\n\n-------------------Sum up-------------------\n");
+                    printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
+                    printf("Ticket price per ticket is: %2f.\nTickets: %d.\nCombo Snack for £5.50 a ticket: NO.\n", ticketPrice, ticketAmount);
+                        break;
+                        
+                default:
+                    //Snack answer validation.
+                    printf("Invalid answer to snack combo question.");
+                    return 0;
+                        break;
+                
+                  
         float discount = (priceSum / (-10));
         float grandTotal;
         
