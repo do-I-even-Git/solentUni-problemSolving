@@ -2,17 +2,6 @@
 // Created by raulf on 13/07/2026.
 //
 
-
-
-
-//* FIX DISCOUNT, FINAL PRINT LAYOUT, SNACK COMBO CALCULATION FORMAT *//
-//* Functional, unspecialised *//
-
-
-
-
-
-
 #include <stdio.h>
 
 int main()
@@ -99,10 +88,10 @@ int main()
     
     //Declaration of discount, snack conditioner, snack price, and ticket price sum.
     float priceSum = (ticketPrice * ticketAmount);
-    float discount = (priceSum / 10);
     char snack;
     float snackPrice = 5.50;
-    
+    float snackSum = (snackPrice * ticketAmount);
+
 
            //Checking for negative values.
             if (ticketAmount < 1){
@@ -119,23 +108,40 @@ int main()
             if(snack == 'Y' || snack == 'y'){
                 
                 //The final cost variable is updated to include the snack cost.
-                priceSum = ((ticketPrice + snackPrice) * ticketAmount);
+                priceSum = (priceSum + snackSum);
             
                     //Printing is actioned factoring in the snack variable and it's price sister variable, feeding values from the switch and if statements above.
                     printf("\n-------------------Sum up-------------------\n");
                     printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
-                    printf("Ticket price per ticket is: %2f.\nTickets: %d.\nCombo Snack for £5.50 a ticket: YES. \n --------- Total cost: %d * (%2f + %2f)  = %2f. --------- \n\n ", ticketPrice, ticketAmount, ticketAmount, ticketPrice, snackPrice, priceSum);
+                    printf("Ticket price per ticket is: %2f.\nTickets: %d.\nSnack Combo Cost: %2f.\n", ticketPrice, ticketAmount, snackSum);
 
                 
             } else if (snack == 'N' || snack == 'n'){
                 
                         
                     //Printing is actioned, feeding values from the switch and if statements above.
-                    printf("\n-------------------Sum up-------------------\n");
+                    printf("\n\n-------------------Sum up-------------------\n");
                     printf("Movie type is: %s.\nTicket type is: %s.\n", movieType, ticketType);
-                    printf("Ticket price per ticket is: %2f.\nTickets: %d.\nCombo Snack for £5.50 a ticket: NO. \n Total cost: %d * %2f = %2f.\n\n ", ticketPrice, ticketAmount, ticketAmount, ticketPrice, priceSum);
+                    printf("Ticket price per ticket is: %2f.\nTickets: %d.\nCombo Snack for £5.50 a ticket: NO.\n", ticketPrice, ticketAmount);
     
                     }
+                    
+        float discount = (priceSum / (-10));
+        float grandTotal;
+        
+        
+            if(ticketAmount > 6){
+                
+                float grandTotal = (priceSum + discount);
+                printf("Discount applied: %2f.\nTotal cost: %d * %2f = %2f - %2f discount = %2f.\n\n", discount, ticketAmount, ticketPrice, priceSum, discount, grandTotal);
+
+
+                
+            } else if (ticketAmount < 6){
+                
+                printf("Discount applied: %2f.\nTotal cost: %d * %2f = %2f.\n\n", discount, ticketAmount, ticketPrice, priceSum);
+                
+            }
    
    
    
