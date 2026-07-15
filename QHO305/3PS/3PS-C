@@ -14,6 +14,7 @@ int main() {
     int stepsTotale;
     float kmTotale;
     float caloriesTotale;
+    int dayCount = 0;
 
 
     while (i != 0){
@@ -24,6 +25,7 @@ int main() {
         switch (answer) {
             case 'Y':
                 i++;
+                dayCount++;
                 printf("--------------You answered YES--------------\n");
                 printf("Please now input step count below.\n\n");
                 scanf(" %d", &steps);
@@ -37,7 +39,8 @@ int main() {
 
             case 'y':
                 i++;
-                printf("--------------You answered YES--------------\nX");
+                dayCount++;
+                printf("--------------You answered YES--------------\n");
                 printf("Please now input step count below.\n\n");
                 scanf(" %d", &steps);
 
@@ -76,6 +79,7 @@ int main() {
 
     kmTotale = (stepsTotale / 1250);
     caloriesTotale = ((stepsTotale * 40) / 1000.0);
+    printf("%d days recorded. Here's a sum up:\n", dayCount);
     printf("%d total steps.\n%.2f total Kms walked.\n%.2f total calories burned.\n", stepsTotale, kmTotale, caloriesTotale);
     printf("    -- Have a steppy day! :)\n              - Goodbye. -");
 
