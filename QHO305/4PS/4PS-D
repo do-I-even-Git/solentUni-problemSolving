@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(void) {
+
+
+    int days = 0;
+    int month = 0;
+    int eventDays = 0;
+    int eventMonth = 0;
+
+    printf("You can now input a day and month value, please use numeric values.\n\n");
+    printf("Please input your DAY now: ");
+    scanf("%d", &days);
+    printf("\nPlease input your MONTH now: ");
+    scanf("%d", &month);
+        int monthconver = ((month * 30) - 30) + days;
+    printf("\nPlease input your EVENT DAY now: ");
+    scanf("%d", &eventDays);
+    printf("\nPlease input your EVENT MONTH now: ");
+    scanf("%d", &eventMonth);
+        int eventmonthconver = ((eventMonth * 30) - 30) + eventDays;
+
+            int daysDiff = (eventmonthconver - monthconver);
+
+            if (eventmonthconver > monthconver) {
+                printf("\n\nThere are aprox. %d days left until the event date. :)", daysDiff);
+            } else if (eventmonthconver < monthconver) {
+                printf("\n----------System error----------\n The introduced event date takes place before today.");
+                printf("\n\n----------Please try again.----------");
+            }
+    
+return 0;
+}
