@@ -15,11 +15,11 @@ int main(void) {
     scanf("%d", &month);
 
 
-    if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 9 || month == 11) && (days > 31 || days < 1)) {
+    if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (days > 31 || days < 1)) {
         printf("=========||=====ERROR=========||=====\nDay input is invalid.\nAccepted values for this month: 1-31.");
         return 0;
     }
-    if ((month == 4 || month == 6 || month == 8 || month == 10 || month == 12) && (days > 30 || days < 1)) {
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && (days > 30 || days < 1)) {
         printf("=========||=====ERROR=========||=====\nDay input is invalid.\nAccepted values for this month: 1-30.");
         return 0;
     }
@@ -78,11 +78,11 @@ int main(void) {
     scanf("%d", &eventMonth);
 
 
-    if ((eventMonth == 1 || eventMonth == 3 || eventMonth == 5 || eventMonth == 7 || eventMonth == 9 || eventMonth == 11) && (eventDays > 31 || eventDays < 1)) {
+    if ((eventMonth == 1 || eventMonth == 3 || eventMonth == 5 || eventMonth == 7 || eventMonth == 8 || eventMonth == 10 || eventMonth == 12) && (eventDays > 31 || eventDays < 1)) {
         printf("=========||=====ERROR=========||=====\nEvent day input is invalid.\nAccepted values for this month: 1-31.");
         return 0;
     }
-    if ((eventMonth == 4 || eventMonth == 6 || eventMonth == 8 || eventMonth == 10 || eventMonth == 12) && (eventDays > 30 || eventDays < 1)) {
+    if ((eventMonth == 4 || eventMonth == 6 || eventMonth == 9 || eventMonth == 11) && (eventDays > 30 || eventDays < 1)) {
         printf("=========||=====ERROR=========||=====\nEvent day input is invalid.\nAccepted values for this month: 1-30.");
         return 0;
     }
@@ -136,8 +136,10 @@ int main(void) {
 
     int daysDiff = eventDays - days;
 
-            if (daysDiff < 60 && daysDiff > 1) {
+            if (daysDiff < 60 && daysDiff > 7) {
                 printf("You're event is coming soon!!");
+            } else if (daysDiff == 1) {
+                printf("Your event is coming soon! It's tomorrow! Get ready! :)");
             } else if (daysDiff > 1 && daysDiff < 7) {
                 printf("Your event is this week! Get ready! :)");
             } else if (daysDiff > 60) {
@@ -145,7 +147,7 @@ int main(void) {
             }
 
 
-            if (eventDays > days) {
+            if (eventDays > days && daysDiff != 1) {
                 printf("\n\nThere are %d days left until the event date. :)\n\n", daysDiff);
             } else if (eventDays < days) {
                 printf("\n\n=========||=====ERROR=========||=====\n   Your event has already passed! :(\n\n");
